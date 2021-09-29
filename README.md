@@ -6,3 +6,7 @@ Explanation:
 3) As we have configuration in config.json under config folder I kept same configuration such as application port as 51005 and mongo port 27017 and mysql 3306 and both DB name as backend-demo.
 4) I have pushed nginx default config file stating that listen on 443 and will take SSL certifates from /etc/nginx location.
 5) once we execute "docker-compose up -d"  then we wil be having 3 conatainer up and running.
+
+
+Note: I have modified musql username and passord in default.json under config folder
+       kept serjer.js which copied from node_server.js because node app is searching for server.js instead of node_server.js
