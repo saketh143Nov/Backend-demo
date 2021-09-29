@@ -1,7 +1,6 @@
 version: "3.2"
 services:
   node:
-      restart: always
       build: .
       ports:
           - 80:51005
@@ -16,12 +15,11 @@ services:
 
   mysql:
       image: mysql:5.7
-      restart: always
       environment:
           MYSQL_DATABASE: 'backend_demo'
-          MYSQL_USER: 'root'
-          MYSQL_PASSWORD: 'password'
-          MYSQL_ROOT_PASSWORD: 'password'
+          MYSQL_USER: 'sqluser'
+          MYSQL_PASSWORD: 'sqluser@123'
+          MYSQL_ROOT_PASSWORD: 'admin@123'
       ports:
           - '3306:3306'
       expose:

@@ -7,8 +7,8 @@
     },
     "mysql" : {
       "name": "backend_demo",
-      "username": "root",
-      "password": "password",
+      "username": "sqluser",
+      "password": "sqluser@123",
       "options": {
         "host": "localhost",
         "port": 3306,
