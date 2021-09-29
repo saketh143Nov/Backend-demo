@@ -1,34 +1,30 @@
-version: '3'
+version: "3.2"
 services:
   node:
-    restart: always
-    build: .
-    ports:
-      - 80:51005
-    volumes:
-      - ./:/code
+      restart: always
+      build: .
+      ports:
+          - 80:51005
+      volumes:
+          - ./:/code
   mongo:
-    image: mongo
-    environment:
-      MONGO_INITDB_DATABASE: 'backend_demo'
-    ports:
-      - 27017:27017
-    volumes:
-      - mongodb:/data/db
-volumes:
- mongodb:
-    mysql:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'backend_demo'
-      MYSQL_USER: 'root'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
-    ports:
-      - '3306:3306'
-    expose:
-      - '3306'
-    volumes:
-      - my-db:/var/lib/mysql
-     
+      image: mongo:latest
+      ports:
+          - 27017:27017
+      volumes:
+          - ./mongodb:/data/db
+
+  mysql:
+      image: mysql:5.7
+      restart: always
+      environment:
+          MYSQL_DATABASE: 'backend_demo'
+          MYSQL_USER: 'root'
+          MYSQL_PASSWORD: 'password'
+          MYSQL_ROOT_PASSWORD: 'password'
+      ports:
+          - '3306:3306'
+      expose:
+          - '3306'
+      volumes:
+          - ./my-db:/var/lib/mysql
