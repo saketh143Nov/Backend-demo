@@ -8,5 +8,5 @@ Explanation:
 5) once we execute "docker-compose up -d"  then we wil be having 3 conatainer up and running.
 
 
-Note: I have modified musql username and passord in default.json under config folder
-       kept serjer.js which copied from node_server.js because node app is searching for server.js instead of node_server.js
+Note: I have modified mysql username and password in default.json under config folder
+      I kept server.js which copied from node_server.js because node app is searching for server.js instead of node_server.js
